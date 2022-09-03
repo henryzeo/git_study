@@ -30,3 +30,18 @@ git相关的学习
 6. git fetch
 7. git merge --allow-unrelated-histories
 8. git push
+
+
+远程仓库和本地仓库的分支名称不同时
+1. 带后缀push
+```
+git push origin master:main
+```
+2. 本地创建与远程仓库相同的分支,设置push.default 为upstream
+```
+git checkout -b main origin/main
+git config push.default upstream
+git branch --set-upstream-to=origin/main(远程仓库名)
+git push
+```
+
