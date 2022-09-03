@@ -42,4 +42,9 @@ git push origin master:main
 git config push.default upstream
 git push
 ```
-
+3. 新建分支
+```
+git checkout --track origin/main
+/* 这时,原先本地的仓库可以删除 */
+git branch -d master
+```
