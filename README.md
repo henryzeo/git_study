@@ -24,10 +24,10 @@ git相关的学习
 ### 方案二
 1. 在远程仓库创建项目
 2. 在本地初始化 git init
-3. 搭建环境
+3. 搭建环境(git add . & git commit -m "")
 4. git remote add origin xxxx(项目地址)
-5. git branch --set-upstream-to=origin/main(master)
-6. git fetch
+5. git fetch
+6. git branch --set-upstream-to=origin/main(master)
 7. git merge --allow-unrelated-histories
 8. git push
 
@@ -37,11 +37,9 @@ git相关的学习
 ```
 git push origin master:main
 ```
-2. 本地创建与远程仓库相同的分支,设置push.default 为upstream
+2. 设置push.default 为upstream
 ```
-git checkout -b main origin/main
 git config push.default upstream
-git branch --set-upstream-to=origin/main(远程仓库名)
 git push
 ```
 
