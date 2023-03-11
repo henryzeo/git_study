@@ -1,0 +1,24 @@
+name:
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "1,5,8,55,56,58 8,9 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Commit
+        run: |
+          git config --global user.email zxveren@gmail.com
+          git config --global user.name Hzeo227
+          git add .
+          git commit -m "update:`date`"
+          git pull --rebase
+
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
